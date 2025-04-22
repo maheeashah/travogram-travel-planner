@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  title: Travogram Travel Planner API
+  version: 1.0.0
+paths:
+  /places:
+    get:
+      summary: Get nearby places based on coordinates
+      parameters:
+        - in: query
+          name: latitude
+          schema:
+            type: number
+          required: true
+          description: Latitude coordinate
+        - in: query
+          name: longitude
+          schema:
+            type: number
+          required: true
+          description: Longitude coordinate
+      responses:
+        '200':
+          description: Successful response with place data
+        '400':
+          description: Missing or invalid query parameters
